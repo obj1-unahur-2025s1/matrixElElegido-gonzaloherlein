@@ -26,14 +26,20 @@ object nave {
         })
     }
 
-    method choca(){
+    method chocar(){
+        pasajeros.forEach({
+            pasajeros => pasajeros.saltar()
+        })
         pasajeros.clear()
     }
 
-    method acelera(){
-        pasajeros.removeAll(pasajeros.filter({
+    method acelerar(){
+        const pasajerosNoElegidos = pasajeros.filter({
             pasajero => !pasajero.esElElegido()
-        }))
+        })
+        pasajerosNoElegidos.forEach({
+            pasajeroNoElegido => pasajeroNoElegido.saltar()
+        })
     }
 }
 
